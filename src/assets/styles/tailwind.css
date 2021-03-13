@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+@import url("https://fonts.cdnfonts.com/css/noe-display");
+
+.activeTab {
+    @apply border-custom-green text-custom-green border-b-4 text-center;
+}
+
+.inActiveTab {
+    @apply border-cyan-brightcyan text-gray-300 text-opacity-100 hover:border-opacity-60 hover:text-white mb-10;
+}
+
+html,
+body,
+#root,
+#root > div {
+    height: 100%;
+}
