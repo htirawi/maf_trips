@@ -11,7 +11,6 @@ const Main = () => {
     const dessertRef = useRef(null);
     const outWildRef = useRef(null);
     const scrollToContent = useRef(null);
-    const [container, setContainer] = useState(window.innerHeight);
 
     /* we are using these values to reflect tabs names */
     const refs = {
@@ -21,20 +20,12 @@ const Main = () => {
         4: outWildRef,
         5: scrollToContent,
     };
-    /* this function is for dynamically set the height of the page */
-    const handleContainerHeight = () => {
-        setContainer(window.innerHeight);
-    };
-    useEffect(() => {
-        window.addEventListener("resize", handleContainerHeight);
-    }, []);
     return (
         <>
             <div
-                className='bg-cover -2x relative'
+                className='bg-cover relative'
                 style={{
                     backgroundImage: `url(${BackgroundImage})`,
-                    height: container,
                 }}
             >
                 {/* Main container */}
@@ -45,8 +36,8 @@ const Main = () => {
                     {/* this div is the one that responsible for the shadow at the end of main poge image */}
                     <div className='bg-custom-gradient-to-r absolute w-full bottom-0 z-0 left-0 h-96'></div>
                 </div>
-                <TripOptions refs={refs} />
             </div>
+            <TripOptions refs={refs} />
         </>
     );
 };
